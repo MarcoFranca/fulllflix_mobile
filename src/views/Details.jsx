@@ -40,7 +40,7 @@ export default function Detail({ navigation }) {
                         <TouchableOpacity
                             style={styles.button}
                             onPress={() => {
-                                navigation.navigate("Home");
+                                navigation.navigate("Movies");
                                 dispatch(returnHome());
                                 setIsLoading(true);
                             }}

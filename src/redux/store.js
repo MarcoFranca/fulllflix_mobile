@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit"
-import dataReducer from "./slice"
+import movieDataReducer from "./slice"
 import { getDefaultMiddleware } from "@reduxjs/toolkit"
 
+const customizedMiddleware = getDefaultMiddleware({
+    serializableCheck: false
+})
 export const store = configureStore({
     reducer: {
-        data: dataReducer,
+        movieData: movieDataReducer,
     },
     devTools: true,
-    middleware: getDefaultMiddleware => getDefaultMiddleware({
-        serializableCheck: false,
-    }),
+    middleware: customizedMiddleware
 })

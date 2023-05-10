@@ -2,14 +2,13 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios";
 import { api } from "../api/api";
 
-
 const initialState ={
     valor: {},
     idDetail: 0
 }
 
 export const countSlice = createSlice({
-    name: "data",
+    name: "movieData",
     initialState,
     reducers: {
       returnHome: (state) => {
@@ -26,8 +25,8 @@ export const countSlice = createSlice({
     }
 });
 
-export const data = (state) => state.data.valor;
-export const id = (state) => state.data.idDetail;
+export const data = (state) => state.movieData.valor;
+export const id = (state) => state.movieData.idDetail;
 
 export const { returnHome, idDetail } = countSlice.actions;
 
